@@ -31,17 +31,36 @@ describe('Day 2: Corruption Checksum', () => {
 })
 
 describe('Day 3: Spiral Memory', () => {
-  const examples = {
-    '1': 0,
-    '12': 3,
-    '23': 2,
-    '1024': 31,
-  }
+  it('finds distance from "center"', () => {
+    const examples = {
+      '1': 0,
+      '12': 3,
+      '23': 2,
+      '1024': 31,
+    }
 
-  const actual = Object.keys(examples).reduce((all, string) => {
-    all[string] = spiralMemory(string)
-    return all
-  }, {})
+    const actual = Object.keys(examples).reduce((all, string) => {
+      all[string] = spiralMemory(string)
+      return all
+    }, {})
 
-  expect(examples).toEqual(actual)
+    expect(examples).toEqual(actual)
+  })
+})
+
+describe('Day 4: High-Entropy Passphrases', () => {
+  it ('identifies valid passphrases', () => {
+    const examples = {
+      'aa bb cc dd ee': true,
+      'aa bb cc dd aa': false,
+      'aa bb cc dd aaa': true,
+    }
+    const highEntropyPassphrases = require('./day04')
+
+    const actual = Object.keys(examples).reduce((all, string) => {
+      all[string] = highEntropyPassphrases(string)
+      return all
+    }, {})
+    expect(examples).toEqual(actual)
+  })
 })
