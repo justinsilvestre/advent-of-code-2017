@@ -1,5 +1,6 @@
 const inverseCaptcha = require('./day01')
 const corruptionChecksum = require('./day02')
+const spiralMemory = require('./day03')
 
 describe('Day 1: Inverse Captcha', () => {
   it('inverse captcha', () => {
@@ -27,4 +28,20 @@ describe('Day 2: Corruption Checksum', () => {
 
   expect(corruptionChecksum(example)).toEqual(18)
   })
+})
+
+describe('Day 3: Spiral Memory', () => {
+  const examples = {
+    '1': 0,
+    '12': 3,
+    '23': 2,
+    '1024': 31,
+  }
+
+  const actual = Object.keys(examples).reduce((all, string) => {
+    all[string] = spiralMemory(string)
+    return all
+  }, {})
+
+  expect(examples).toEqual(actual)
 })
