@@ -6,6 +6,10 @@
   "author": "Justin Silvestre <justinsilvestre@gmail.com>",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest ."
+  },
   "dependencies": {
     "jest": "^21.2.1"
   }
