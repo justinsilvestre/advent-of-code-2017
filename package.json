@@ -1,0 +1,12 @@
+{
+  "name": "advent-of-code",
+  "version": "1.0.0",
+  "description": "Solutions to 2017 Advent of Code",
+  "repository": "https://github.com/justinsilvestre/advent-of-code-2017.git",
+  "author": "Justin Silvestre <justinsilvestre@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jest": "^21.2.1"
+  }
+}
