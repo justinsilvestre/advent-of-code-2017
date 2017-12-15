@@ -1,6 +1,7 @@
-const inverseCaptcha = require('./day01')
-const corruptionChecksum = require('./day02')
-const spiralMemory = require('./day03')
+const mapObject = (examples, fn) => Object.keys(examples).reduce((result, string) => {
+  result[string] = fn(string)
+  return result
+}, {})
 
 describe('Day 1: Inverse Captcha', () => {
   it('inverse captcha', () => {
@@ -11,10 +12,7 @@ describe('Day 1: Inverse Captcha', () => {
       '91212129': 9,
     }
 
-    const actual = Object.keys(examples).reduce((all, string) => {
-      all[string] = inverseCaptcha(string)
-      return all
-    }, {})
+    const actual = mapObject(examples, require('./day01'))
 
     expect(examples).toEqual(actual)
   })
@@ -26,7 +24,7 @@ describe('Day 2: Corruption Checksum', () => {
 7 5 3
 2 4 6 8`
 
-  expect(corruptionChecksum(example)).toEqual(18)
+  expect(require('./day02')(example)).toEqual(18)
   })
 })
 
@@ -39,10 +37,7 @@ describe('Day 3: Spiral Memory', () => {
       '1024': 31,
     }
 
-    const actual = Object.keys(examples).reduce((all, string) => {
-      all[string] = spiralMemory(string)
-      return all
-    }, {})
+    const actual = mapObject(examples, require('./day03'))
 
     expect(examples).toEqual(actual)
   })
@@ -57,10 +52,15 @@ describe('Day 4: High-Entropy Passphrases', () => {
     }
     const highEntropyPassphrases = require('./day04')
 
-    const actual = Object.keys(examples).reduce((all, string) => {
-      all[string] = highEntropyPassphrases(string)
-      return all
-    }, {})
+    const actual = mapObject(examples, highEntropyPassphrases)
     expect(examples).toEqual(actual)
+  })
+})
+
+describe('Day 5: A Maze of Twisty Trampolines, All Alike', () => {
+  it('finds the number of steps till escape', () => {
+    const example = '0\n3\n0\n1\n-3'
+
+    expect(require('./day05')(example)).toEqual(5)
   })
 })
