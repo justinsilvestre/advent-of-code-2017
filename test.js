@@ -93,3 +93,14 @@ cntj (57)`
     expect(require('./day07')(example)).toEqual('tknk')
   })
 })
+
+describe('Day 8: I Heard You Like Registers', () => {
+  it('finds the largets value in registers after all modifications', () => {
+    const example = `b inc 5 if a > 1
+a inc 1 if b < 5
+c dec -10 if a >= 1
+c inc -20 if c == 10`
+
+    expect(require('./day08')(example)).toEqual(1)
+  })
+})
