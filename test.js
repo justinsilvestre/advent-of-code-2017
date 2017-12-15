@@ -64,3 +64,11 @@ describe('Day 5: A Maze of Twisty Trampolines, All Alike', () => {
     expect(require('./day05')(example)).toEqual(5)
   })
 })
+
+describe('Day 6: Memory Reallocation', () => {
+  it('finds the number of steps till escape', () => {
+    const example = '0 2 7 0'
+
+    expect(require('./day06')(example)).toEqual(5)
+  })
+})
