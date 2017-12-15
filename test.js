@@ -95,12 +95,29 @@ cntj (57)`
 })
 
 describe('Day 8: I Heard You Like Registers', () => {
-  it('finds the largets value in registers after all modifications', () => {
+  it('finds the largest value in registers after all modifications', () => {
     const example = `b inc 5 if a > 1
 a inc 1 if b < 5
 c dec -10 if a >= 1
 c inc -20 if c == 10`
 
     expect(require('./day08')(example)).toEqual(1)
+  })
+})
+
+describe('Day 9: Stream Processing', () => {
+  it('finds the score of a stream', () => {
+    const examples = {
+      '{}': 1,
+      '{{{}}}': 6,
+      '{{},{}}': 5,
+      '{{{},{},{{}}}}': 16,
+      '{<a>,<a>,<a>,<a>}': 1,
+      '{{<ab>},{<ab>},{<ab>},{<ab>}}': 9,
+      '{{<!!>},{<!!>},{<!!>},{<!!>}}': 9,
+      '{{<a!>},{<a!>},{<a!>},{<ab>}}': 3,
+    }
+
+    expect(mapObject(examples, require('./day09'))).toEqual(examples)
   })
 })
