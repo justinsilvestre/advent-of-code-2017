@@ -13,3 +13,5 @@ console.log('day 06:', require('./day06')(readFileSync('./day06.txt', 'utf8')))
 console.log('day 07:', require('./day07')(readFileSync('./day07.txt', 'utf8')))
 console.log('day 08:', require('./day08')(readFileSync('./day08.txt', 'utf8')))
 console.log('day 09:', require('./day09')(readFileSync('./day09.txt', 'utf8')))
+const checkDay10 = ([first, second]) => first * second
+console.log('day 10:', checkDay10(require('./day10')(readFileSync('./day10.txt', 'utf8'))))

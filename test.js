@@ -121,3 +121,10 @@ describe('Day 9: Stream Processing', () => {
     expect(mapObject(examples, require('./day09'))).toEqual(examples)
   })
 })
+
+describe('Day 10: Knot Hash', () => {
+  it('makes a knot in number-marked circle', () => {
+    const tieKnot = require('./day10')
+    expect(tieKnot('3,4,1,5', 5)).toEqual([3, 4, 2, 1, 0])
+  })
+})
